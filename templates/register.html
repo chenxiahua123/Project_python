@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>
+{#		<script type="text/javascript" src="js/jquery.cookie.js" ></script>#}
+		<script src="{% static 'js/register.js' %}"></script>
+	</head>
+	<body>
+		<div class="homepage">
+			<div class="header">
+				<a href="#"><img src="{% static 'img/logo_mo.jpg' %}"/></a>
+			</div>
+			<div class="content">
+				<div class="logo_banner">
+					<a href="#">
+						<img src="{% static 'img/register.jpg' %}" />
+					</a>
+				</div>
+				<div class="register_con">
+					<div class="reg-title">
+						<h3>新用户注册</h3>
+					</div>
+					<div class="wrapper">
+                        <form action="{% url 'app01:register' %}" method="post">
+                            {% csrf_token %}
+{#                            <input type="text" placeholder="请输入用户名" class="name" name="username" /><br />#}
+{#                            <input type="password" placeholder="请输入密码" class="pwd" name="password"/><br />#}
+{#                            <input type="password" placeholder="请确认密码" class="checked" /><br />#}
+{#                            <input type="button" value=" 注册" class="register" />#}
+{#                            <p></a><input type="checkbox" value="" checked="true"/>我已阅读并且同意<span>《蘑菇街网络服务使用协议》</span></p>#}
+{#						    <a href="#" class="toLogin">已有帐号</a>#}
+
+{#                            <input type="text" placeholder="请输入注册账号" name="username">#}
+{#                            <br>#}
+{#                            <input type="password" placeholder="请输入注册密码" name="password">#}
+{#                            <br>#}
+{#                            <input type="submit" name="注册">#}
+
+                            {#            has-error错误，has-success成功#}
+                            <div class="form-group has-feedback" id="username">
+                                <div class="input-group">
+                                    <span class="input-group-addon" >账户</span>
+                                    <input type="text" class="form-control1" name="username" placeholder="请输入注册账户">
+                                </div>
+                {#                glyphicon-remove  glyphicon-ok#}
+                                <span class="glyphicon form-control-feedback" id="glyphicon1" aria-hidden="true"></span>
+                            </div>
+                            <p style="color: red" id="err"></p>
+
+                            <div class="form-group has-feedback" id="password">
+                                <div class="input-group">
+                                    <span class="input-group-addon">密码</span>
+                                    <input type="password" class="form-control2" name="password" placeholder="6位数字密码" maxlength="6"  autocomplete="off">
+                                    <span class="glyphicon form-control-feedback" id="glyphicon2"aria-hidden="true"></span>
+                                </div>
+                            </div>
+                            <p style="color: red" id="err2"></p>
+
+                            <br>
+
+                            <input type="submit" value="注册" id="subButton">
+
+                        </form>
+
+					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="bottom-info">
+					<div class="logo-fr">
+						<h3>蘑菇街移动客户端</h3>
+						<a href="#">
+							<img src="{% static 'img/bg-fr.jpg' %}" />
+						</a>
+					</div>
+					<ul class="link_list">
+						<li>
+							<h3>新手帮助</h3>
+							<a href="#">如何购买</a>
+							<a href="#">支付教程</a>
+							<a href="#">优惠券使用</a>
+							<a href="#">常见问题</a>
+						</li>
+						<li>
+							<h3>权益保障</h3>
+							<p>7天无理由退货</p>
+							<p>退货运费补贴</p>
+							<p>72小时发货</p>
+						</li>
+						<li>
+							<h3>商家服务</h3>
+							<a href="#">免费开店</a>
+							<a href="#">商家社区</a>
+							<a href="#">商家入驻</a>
+							<a href="#">管理后台</a>
+						</li>
+					</ul>
+				</div>
+				<p class="copyright">
+					&copy;Copyright&nbsp;2010-2016蘑菇街 Mogujie.com&nbsp;(增值电信业务经营许可证：浙B2-2110349)
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
